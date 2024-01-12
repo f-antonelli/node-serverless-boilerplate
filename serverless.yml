@@ -6,9 +6,13 @@ provider:
   runtime: nodejs18.x
 
 functions:
-  api:
-    handler: index.handler
+  signup:
+    handler: app/handler.Signup
     events:
       - httpApi:
-          path: /
-          method: get
+          path: /signup
+          method: post
+
+plugins:
+  - serverless-offline
+  - serverless-plugin-typescript
